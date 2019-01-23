@@ -1,21 +1,6 @@
-# elm
+饿了吗Vue demo
+___
+跟着HuangYi老师学习的成功，多少还有点没理解的地方，首页有学习笔记  
 
-> element le ma?demo
+![image](https://github.com/PearpearS/elm/blob/master/src/common/gif/pic1.gif)
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
