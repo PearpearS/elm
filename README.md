@@ -4,3 +4,5 @@ ___
 
 ![image](https://github.com/PearpearS/elm/blob/master/src/common/gif/pic01.gif)
 
+![image](https://github.com/PearpearS/elm/blob/master/src/common/gif/pic02.gif)
+
