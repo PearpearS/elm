@@ -1,0 +1,110 @@
+使用组件：
+在线制作svg图标（包括自定义图标）：https://icomoon.io/
+Vue-router
+axios
+better-scroll 
+rest.css     border.css
+stylus
+stylus-loader
+
+
+-----------------------------------------------
+
+
+
+Common文件夹的意思：公共文件
+
+问题：require是什么？
+解决：ES6标准发布后，module成为标准，标准的使用是以export指令导出接口，以import引入模块，但是在我们一贯的node模块中，我们采用的是CommonJS规范，使用require引入模块，使用module.exports导出接口。
+
+问题：想本地mock数据，发现新版本的vue没有dev-server.js这个文件了
+解决：新版本和webpack.dev.conf.js合并在一起了。  (配置好以后，要重新npm run dev)
+        举例：const express = require('express')
+	   const app = express() //请求server
+	   var appData = require('../data.json');
+                 var seller = appData.seller;
+	   var goods = appData.goods;
+	   var ratings = appData.ratings;
+	   var apiRoutes = express.Router();
+	   app.use('/api', apiRoutes)
+然后在devServer对象的最后，添加路由
+	before(app) {
+            app.get('/api/seller', (req, res) => {
+                res.json({
+                        errno: 0,
+                        data: seller
+                    }) //接口返回json数据，上面配置的数据appData就赋值给data请求后调用
+            })
+
+            app.get('/api/goods', (req, res) => {
+                res.json({
+                    errno: 0,
+                    data: goods
+                })
+            })
+
+            app.get('/api/rating', (req, res) => {
+                res.json({
+                    errno: 0,
+                    data: ratings
+                })
+            })
+        }
+
+问题：.eslintrc.js是什么文件？
+解决：eslint的一些规则定义，当然你也可以在里面自定义 
+
+问题：移动端设计图一般是750，而手机的设备是350
+解决：所以有的设计图的尺寸要/2
+
+问题：<router-view></router-view>是什么？
+解决：<!-- 路由匹配到的组件将渲染在这里 -->
+
+问题：如何设置默认显示某个路由？（路由重定向） 
+解决：path: '/',
+      redirect: '/api/goods'
+  
+问题：用了router-link标签之后，他会自动加入一些类名，比如点击触发时的类名router-link-active
+解决：router-link-active 设置color：red的意思就是，该路由被触发时，颜色是红色
+
+问题：用ajax的时候，判断状态码，最好可以这样 const ERR_OK=200
+解决：语义化，而且方便维护以及修改，就不用那么麻烦了
+
+问题：实现无论一行还是两行都要垂直居中
+解决：display：table 完美解决
+
+问题：用了better-scroll的地方不能实现点击事件
+解决：new完对象之后，要传入第二个参数click:true，因为better-scroll默认阻止点击事件
+
+问题：一种规范
+解决：方法前面有下划线的代表是私有的，只能在该组件里使用，反之
+
+问题：看一个防止抖动的问题
+解决：.image-header
+            position relative
+            width 100%
+            heihgt 0
+            padding-top 100%
+            img 
+                position absolute
+                top 0
+                left 0
+                width 100%
+                height 100%
+padding-top为100%的时候，他的高度就等于宽度
+
+问题：vue单向数据流的问题
+解决：父组件传给子组件的时候，直接传递一个对象，这样子组件就能修改prop的同时，同步更新至父组件
+
+问题：example英文意思是什么？
+解决： 例子的意思
+
+问题：如果自己写个工具类js？
+解决：/**
+ * 解析url参数
+ * @exapmle ？id=123&a=b    例子
+ * @return Obeject {id:123,a:b}。返回的数据格式如下
+ */
+export function urlParse () {
+  
+}
